@@ -7,7 +7,7 @@ to the panel.
 
 ## Tech stack (do not change without asking me)
 
-- Frontend: React
+- Frontend: React + Vite + JavaScript, Tailwind CSS v4 (colors defined in src/index.css @theme)
 - Backend: Node.js + Express
 - Database: MySQL 8.0 locally (development, managed with MySQL Workbench);
   TiDB Cloud Starter in production (MySQL-compatible, SSL required).
@@ -59,10 +59,16 @@ to the panel.
 
 - If the ui-ux-pro-max, frontend-design, taste or impeccable skills are
   installed, use them when designing or building any page or component.
-- Keep one consistent design: cream background (#FFF8EC), sloth brown
-  (#6B4F3A) for headings, leaf green (#3E7C4B) as the main accent,
-  amber (#F2A93B) for highlights. Reuse these as CSS variables; do not
-  invent new colors.
+- Keep one consistent design. Use ONLY these colors (defined in
+  frontend/src/index.css @theme; do not invent new colors):
+  - cream (#FFF8EC) page background; surface (#FFFFFF) cards and modals
+  - sloth brown (#6B4F3A) headings; ink (#3B2A1E) body text
+  - forest (#2F5D3A) primary buttons and nav; leaf green (#3E7C4B) hover,
+    links and icons; mint (#E4F1E6) selected/success backgrounds
+  - gold (#F1D9A8) soft highlight areas (pending, needs confirmation);
+    amber (#F2A93B) small badges and flags only, as a background with ink
+    text, never as a text color
+  - danger (#B3261E) error messages
 - Mobile-first and responsive; most students use phones.
 - Accessible: readable contrast, labels on every form field, keyboard
   navigation, clear focus states.
@@ -77,6 +83,14 @@ to the panel.
 - After each change, tell me which files you created or changed and how to
   test them.
 - Do NOT run `git commit` or `git push`. I review and commit the changes myself.
+- After every update, end your reply with the git commands for me to run
+  myself, in one copy-paste code block, in this format:
+  ```
+  git status
+  git add .
+  git commit -m "clear message describing the change"
+  ```
+  Add `git push` only once a remote is set up. Never run these yourself.
 - Priority order: Phase 1 (task board, contribution log, peer ratings,
   fairness report), then Phase 2 (AI check-in and summaries).
 

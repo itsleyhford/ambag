@@ -1,0 +1,55 @@
+/* frontend/src/index.css */
+@import "tailwindcss";
+
+/*
+  AMBAG color theme (Tailwind v4).
+  Every color below becomes a utility class automatically:
+  bg-cream, text-ink, bg-forest, border-gold, text-danger, etc.
+  Use ONLY these colors in the app. Contrast ratios are checked
+  against WCAG AA (4.5:1 for normal text).
+*/
+@theme {
+  /* Neutrals */
+  --color-cream: #FFF8EC;   /* page background */
+  --color-surface: #FFFFFF; /* cards, modals, inputs */
+
+  /* Text */
+  --color-sloth: #6B4F3A;   /* headings (7.1:1 on cream) */
+  --color-ink: #3B2A1E;     /* body text (12.9:1 on cream) */
+
+  /* Main accent: green pair (deep + bright) */
+  --color-forest: #2F5D3A;  /* primary buttons, nav; white text on it = 7.6:1 */
+  --color-leaf: #3E7C4B;    /* hover, links, icons (4.7:1 on cream) */
+  --color-mint: #E4F1E6;    /* selected / success background; forest text on it = 6.6:1 */
+
+  /* Highlights: warm pair (soft + strong) */
+  --color-gold: #F1D9A8;    /* soft highlight areas (pending / needs confirmation); ink text = 9.9:1 */
+  --color-amber: #F2A93B;   /* strong highlight for small badges and flags; use as BACKGROUND with ink text (6.9:1), never as text color */
+
+  /* Status */
+  --color-danger: #B3261E;  /* error messages (6.2:1 on cream) */
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-sloth);
+    line-height: 1.2;
+  }
+
+  /* Clear keyboard focus on every interactive element (accessibility rule). */
+  :focus-visible {
+    outline: 3px solid var(--color-forest);
+    outline-offset: 2px;
+  }
+}
